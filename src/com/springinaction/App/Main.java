@@ -12,6 +12,7 @@ import java.util.Properties;
  */
 public class Main {
     public static void main(String[] args) throws PerformException {
+        // 加载XML文件
         ApplicationContext ctx = new ClassPathXmlApplicationContext("com/springinaction/springidol/spring-config.xml");
         Perfomer perfomer = (Perfomer)ctx.getBean("duke");
         perfomer.perform();

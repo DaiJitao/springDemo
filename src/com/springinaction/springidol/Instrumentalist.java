@@ -1,10 +1,15 @@
 package com.springinaction.springidol;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * Created by daijitao on 2018/4/17.
  */
 public class Instrumentalist implements Perfomer {
+    public Instrumentalist(){
+
+    }
     private String song;
     private int age;
 
@@ -16,9 +21,6 @@ public class Instrumentalist implements Perfomer {
         return age;
     }
 
-    public Instrumentalist() {
-
-    }
     @Override
     public void perform() throws Exception {
         System.out.println("表演天赋的音乐家。。。在唱" + song);
@@ -35,8 +37,11 @@ public class Instrumentalist implements Perfomer {
     public String screamSong() {
         return song;
     }
+
+    @Autowired
     private Instrument instrument;
 
+    @Autowired
     public void setInstrument(Instrument instrument) {
         this.instrument = instrument;
     }

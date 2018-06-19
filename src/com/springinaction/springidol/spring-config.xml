@@ -6,6 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 
+    <bean id="instrument" class="com.springinaction.springidol.Saxophone"/>
     <bean id="sonnet29" class="com.springinaction.springidol.Sonnet29"></bean>
     <bean id="duke" class="com.springinaction.springidol.Juggler" >
         <!-- 构造器注入 -->
@@ -17,7 +18,14 @@
     </bean>
     <bean id="kenny" class="com.springinaction.springidol.Instrumentalist">
         <property name="song" value="昨日重现"/>
-        <property name="age" value="30"/>
+        <property name="age" value="30" />
+    </bean>
+    <bean id="kenny2" class="com.springinaction.springidol.Instrumentalist" autowire="byName">
+        <property name="song" value="hhhh"></property>
+     </bean>
+    <bean id="Auditorium" class="com.springinaction.springidol.Auditorium"
+          init-method="turnOnLights" destroy-method="turnOffLights">
+
     </bean>
 
 </beans>
